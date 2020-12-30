@@ -31,7 +31,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/primeicons/primeicons.css",
+              "./node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "./node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": []
           },
@@ -127,5 +131,8 @@
       }
     }
   },
-  "defaultProject": "quran-web"
+  "defaultProject": "quran-web",
+  "cli": {
+    "analytics": "51f9c72e-dc3e-41ef-9407-bb9f28782ade"
+  }
 }
