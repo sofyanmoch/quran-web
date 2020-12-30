@@ -10,7 +10,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 export class QuranService {
 
   // api
-  API = process.env.API_URL;
+  API = 'https://api.quran.sutanlab.id/surah';
 
   // httpHeaders
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
@@ -19,14 +19,17 @@ export class QuranService {
 
   // service
   // tslint:disable-next-line:typedef
-  findAll() {
-    return this.httpClient.get(`${this.API}`);
+  findAll(): Observable<any> {
+    return this.httpClient.get(`${this.API}`)
+    .pipe(map((res: any) => {
+      return res.data;
+    }));
   }
   findById(idSurah: any): Observable<any> {
     const API_URL = `${this.API}/${idSurah}`;
     return this.httpClient.get(API_URL, { headers: this.httpHeaders })
     .pipe(map((res: any) => {
-      return res || { };
+      return res.data.verses || { };
     }),
       catchError(this.handleError)
     );

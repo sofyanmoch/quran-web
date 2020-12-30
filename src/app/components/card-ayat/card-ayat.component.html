@@ -1,1 +1,10 @@
-<p>card-ayat works!</p>
+<div class="row px-3 mx-3">
+    <div class="my-3 col-lg-12 card" style="width: 18rem;" *ngFor="let ayat of Ayat; let i = index" (click)="showDialog()" label="Show">
+        <div class="card-body row" >
+            <div class="col-lg-6">{{ayat.translation.id}}</div>
+            <div class="col-lg-6 text-right">{{ayat.text.arab}}</div>
+        </div>
+  </div>
+</div>
+
+
